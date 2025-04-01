@@ -132,7 +132,7 @@
 
 
 
-      <!-- section-->
+      <!-- services section-->
 
 
 
@@ -202,7 +202,7 @@
 
 
 
-	<div class="main2">
+	<div id="main2" class="main2">
         <br>
 		<h1 class="heading">Book An Appointment</h1>
         <br>
@@ -237,7 +237,15 @@
         <br><br>
     </div>
     <script>
-        // Get today's date in YYYY-MM-DD format
+        function scrollToAppointment() {
+        const targetElement = document.getElementById('main2');
+        
+        // Scroll smoothly to the target element
+        targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
         let today = new Date().toISOString().split('T')[0];
         document.getElementById("date").setAttribute("min", today);
         //
@@ -315,10 +323,10 @@
             </p>
             <!-- Buttons -->
             <div class="mt-4 text-md-start text-center">
-                <button class="btn btn-outline-pink me-3">
+                <a href="tel:+1234567890" class="btn btn-outline-pink me-3">
                     <i class="fas fa-comments"></i> Talk to Us
-                </button>
-                <button class="btn btn-outline-pink">
+                </a>
+                <button class="btn btn-outline-pink" onclick="scrollToAppointment()">
                     <i class="fas fa-calendar-check"></i> Book Appointment
                 </button>
             </div>
@@ -379,6 +387,20 @@
 </div>
 
 
+
+<!-- text -->
+
 	
+
+<section class="clinic-services-section">
+    <h2>Best Women and Children Clinic in Hulimavu, Bengaluru</h2>
+    <p>
+        At Kavya’s Cradle, we take pride in being the best choice for those seeking exceptional medical care. We specialize in <b>obstetrics, gynecology, orthopedics, fertility, laparoscopy,</b> and more. We’re not just a healthcare facility; we’re your trusted partner when it comes to women and child health, offering state-of-the-art medical solutions in Hulimavu, Arekere, Kothnur, Begur, Shantiniketan Layout, Bannerghatta Road, and surrounding areas in South Bengaluru. Our goal is to deliver the best treatment to our patients with utmost care and compassion.
+    </p>
+</section>
+
+
+
+
 </body>
 </html>
