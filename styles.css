@@ -1,19 +1,18 @@
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    body {
-        width: 100%;
-        min-height: 100vh;
-        font-family: 'Arial', sans-serif;
-        overflow-x: hidden; /* Prevents horizontal scrolling */
-    }
-
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   width: 100%;
+   min-height: 100vh;
+   font-family: 'Arial', sans-serif;
+   overflow-x: hidden; 
+}
 
 
-    /* navbar */
+
+/* navbar */
 
 
 
@@ -157,7 +156,7 @@
 
 .carousel-item img {
     object-fit: contain; /* Ensure the image is fully visible */
-    width: 100%; /* Ensure image stretches to the full width of the container */
+    width: 140%; /* Ensure image stretches to the full width of the container */
     height: 100%; /* Ensure image stretches to the full height of the container */
 }
 
