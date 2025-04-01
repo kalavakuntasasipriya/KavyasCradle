@@ -508,9 +508,9 @@
  .btn-outline-pink {
  border: 2px solid #d63384;
  color: #d63384;
- padding: 10px 20px;
+ padding: 10px 10px;
  border-radius: 30px;
- font-size: 16px;
+ font-size: 14px;
  transition: 0.3s;
  background-color: white;
  }
