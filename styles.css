@@ -152,7 +152,6 @@
  .carousel-item {
      width: 100%;
      height: 60vh; /* Make the carousel height responsive */
-     padding-top: 60px;
  }
  
  .carousel-item img {
@@ -289,7 +288,7 @@
      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
      .services-section {
          background-color: #fff; 
-         padding: 80px 10%; 
+         padding: 40px 10%; 
          text-align: center;
          transition: transform 0.3s ease-in-out;
      }
