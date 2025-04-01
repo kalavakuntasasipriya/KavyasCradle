@@ -156,7 +156,7 @@ body {
 
 .carousel-item img {
     object-fit: contain; /* Ensure the image is fully visible */
-    width: 140%; /* Ensure image stretches to the full width of the container */
+    width: 100%; /* Ensure image stretches to the full width of the container */
     height: 100%; /* Ensure image stretches to the full height of the container */
 }
 
