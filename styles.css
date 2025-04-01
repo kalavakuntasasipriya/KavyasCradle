@@ -177,13 +177,13 @@
     z-index: 10;
 }
 
-/* Position the previous and next controls */
+/* Adjust button positioning and size for mobile */
 .carousel-control-prev {
-    left: 15px;
+    left: 10px;
 }
 
 .carousel-control-next {
-    right: 15px;
+    right: 10px;
 }
 
 /* Adjust carousel control size for smaller screens */
@@ -213,10 +213,16 @@
     }
 }
 
+/* Remove any unnecessary margins or padding that might create extra white space */
+.carousel-inner {
+    padding: 0; /* Ensure no extra padding around carousel items */
+}
+
 body {
     position: relative;
     z-index: 0;
     background-color: white;
+    margin: 0; /* Remove default margin */
 }
 
 .content {
@@ -225,6 +231,7 @@ body {
     background-color: white;
     padding: 20px;
 }
+
 
 
 
