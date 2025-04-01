@@ -1,0 +1,680 @@
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        width: 100%;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif;
+        overflow-x: hidden; /* Prevents horizontal scrolling */
+    }
+
+
+
+    /* navbar */
+
+
+
+    .navbar {
+        padding: 0 !important; 
+        margin: 0 !important;  
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+        z-index: 1050;
+    }
+    .navbar-brand {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .navbar-brand img {
+        display: block; 
+        width: 100px; 
+        height: auto;
+    }
+    .navbar-custom {
+        border: 2px solid #ffb6c1;
+        background-color: white;
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        padding: 15px 20px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transition: all 0.4s ease-in-out;
+    }
+    .navbar-small {
+        padding: 10px 20px;
+        width: 75%;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.25);
+    }
+    /* Navbar Links */
+    .navbar-nav .nav-link {
+        color: black !important;
+        font-weight: bold;
+        font-size: 18px; 
+        padding: 10px 15px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .navbar-nav .nav-link:hover {
+        background-color: #fc6d82;
+        color: white !important;
+        border-radius: 5px;
+    }
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        right: -50%;
+        width: 50%;
+        height: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
+    }
+    .mobile-nav.show {
+        right: 0;
+    }
+    .navbar-custom, .mobile-nav {
+        z-index: 1000; 
+    }
+    .carousel + .content {
+        margin-top: 20px;
+    }
+    .close-btn {
+        font-size: 22px;
+        color: red;
+        border: 2px solid black; 
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+    }
+    .close-btn:hover {
+        background-color: darkgray;
+    }
+    .hamburger {
+        font-size: 30px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: black;
+        transition: all 0.3s ease-in-out;
+    }
+    .hide-navbar {
+        display: none !important;
+    }
+    @media (max-width: 768px) {
+        .desktop-menu {
+            display: none;
+        }
+        .hamburger {
+            display: block;
+        }
+        .content {
+            margin-top: 100px;
+        }
+        .navbar-nav .nav-link {
+            font-size: 20px; 
+        }
+    }
+    @media (min-width: 769px) {
+        .mobile-nav {
+            display: none !important;
+        }
+        .hamburger {
+            display: none;
+        }
+    }
+
+
+
+    /* carosel */
+
+
+
+.carousel,
+.carousel-inner,
+.carousel-item {
+width: 100%;
+height: 85vh; /* This keeps the carousel height consistent */
+}
+
+.carousel-item img {
+object-fit: cover;
+width: 100%;   /* Make sure image takes up the full width */
+height: 100%;  /* Ensure image takes up the full height */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+top: 50%; 
+transform: translateY(-50%);
+z-index: 10; 
+}
+
+.carousel-control-prev {
+left: 15px; 
+}
+
+.carousel-control-next {
+right: 15px; 
+}
+
+@media (max-width: 768px) {
+/* On mobile, adjust the size of the carousel control icons */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 20px; 
+    height: 20px;
+}
+
+/* For smaller screens, reduce the height of the carousel */
+.carousel-item {
+    height: 60vh;  /* Adjust this to suit the desired look */
+}
+
+/* Ensure the image fits within the carousel on mobile */
+.carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+}
+
+body {
+position: relative;
+z-index: 0;
+background-color: white;
+}
+
+.content {
+position: relative;
+z-index: 2; 
+background-color: white;
+padding: 20px;
+}
+
+
+
+
+    /* Fixed Buttons Container */
+
+
+
+    .fixed-action-buttons {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+/* Common Button Styling */
+.fixed-action-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.fixed-action-buttons a:hover {
+    transform: scale(1.1);
+}
+
+/* Appointment Button */
+.appointment-action-btn {
+    background-color: purple;
+}
+
+/* Call Button */
+.call-action-btn {
+    background-color: green;
+}
+
+
+
+    /* conetnt section(text) */
+
+    
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    .services-section {
+        background-color: #fff; 
+        padding: 40px 10%; 
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+    }
+    .services-section h2 {
+        font-size: 36px;
+        color: #fc6d82; 
+        font-weight: 600;
+        text-transform: uppercase;
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 15px;
+    }
+    .services-section p:first-of-type {
+        font-size: 18px;
+        color: #a87ca0; 
+        font-weight: 500;
+    }
+    .services-section p:not(:first-of-type) {
+        font-size: 16px;
+        color: #555; 
+        line-height: 1.7;
+    }
+    @media (max-width: 992px) {
+        .services-section {
+            padding: 60px 5%;
+        }
+        .services-section h2 {
+            font-size: 30px;
+        }
+        .services-section p {
+            font-size: 15px;
+        }
+    }
+    @media (max-width: 768px) {
+        .services-section {
+            padding: 50px 3%;
+        }
+        .services-section h2 {
+            font-size: 28px;
+        }
+        .services-section p {
+            font-size: 14px;
+        }
+    }
+
+
+
+    /* cards */
+
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    .main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+    }
+    .card {
+        background: #fff;
+        border: 1px solid #48D1CC;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card img {
+        width: 100%;
+        height: 150px;
+        border-radius: 10px;
+    }
+    .card h2 {
+        font-size: 20px;
+        color: #333;
+        margin-top: 15px;
+    }
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+    }
+    @media (max-width: 992px) {
+        .main {
+            grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        }
+    }
+    @media (max-width: 600px) {
+        .main {
+            grid-template-columns: repeat(1, 1fr); /* 1 card per row */
+        }
+    }
+    .marqeeheading {
+        padding: 30px;
+        color: #DB7093;
+        font-size: 24px;
+    }
+
+
+
+    /* form */
+
+
+
+.main2 {
+margin: 0;
+padding: 0;
+background-image: url("appointment_background.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+/* Title */
+.heading {
+font-size: 45px;
+color: #4682B4;
+text-align: center;
+}
+
+/* Form */
+.form {
+border-radius: 20px;
+background-color: rgb(199, 193, 193);
+padding: 40px;
+width: 500px;
+position: relative;
+text-align: center;
+}
+
+/* Input Fields */
+.input {
+width: 100%;
+margin: 10px 0;
+border-radius: 20px;
+background-color: white;
+font-size: 15px;
+color: black;
+padding: 15px;
+}
+
+/* Submit and Reset Buttons */
+.submit {
+margin: 10px 5px;
+font-size: 17px;
+border-radius: 20px;
+padding: 10px 15px;
+color: green;
+background-color: #AFEEEE;
+cursor: pointer;
+}
+
+/* Footer */
+.copy {
+background-color: black;
+color: white;
+padding: 10px;
+text-align: center;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+.heading {
+    font-size: 35px;
+}
+
+.form {
+    width: 90%; /* Adjusts to screen size */
+    padding: 20px;
+}
+
+.input {
+    font-size: 14px;
+    padding: 12px;
+}
+
+.submit {
+    font-size: 16px;
+    padding: 10px;
+}
+}
+
+@media (max-width: 480px) {
+.heading {
+    font-size: 30px;
+}
+
+.form {
+    width: 95%; /* Uses almost full screen */
+    padding: 15px;
+}
+
+.input {
+    font-size: 13px;
+    padding: 10px;
+}
+
+.submit {
+    font-size: 15px;
+    padding: 8px;
+}
+}
+
+
+
+
+    /* about  */
+
+
+
+    .text-pink {
+color: #d63384;
+}
+
+.btn-outline-pink {
+border: 2px solid #d63384;
+color: #d63384;
+padding: 10px 20px;
+border-radius: 30px;
+font-size: 16px;
+transition: 0.3s;
+background-color: white;
+}
+
+.btn-outline-pink:hover {
+background-color: #d63384;
+color: white;
+}
+
+.about-text {
+font-size: 16px;
+color: #6c757d;
+white-space: pre-wrap;
+word-wrap: break-word;
+overflow: hidden;
+}
+
+.image-container {
+max-width: 400px;
+height: auto;
+}
+
+.hover-image {
+width: 100%;
+height: auto;
+transition: transform 0.4s ease-in-out;
+}
+
+.hover-image:hover {
+transform: scale(1.1);
+}
+
+/* Center Image on Small Screens */
+@media (max-width: 767px) {
+.image-container {
+    max-width: 100%;
+}
+}
+
+
+
+
+    /* status of hospital */
+
+
+
+
+
+    .about-container {
+max-width: 1200px;
+margin: auto;
+text-align: center;
+padding: 20px;
+}
+
+/* Title */
+.about-container h1 {
+color: #fc6d82;
+font-size: 2.5rem;
+margin-bottom: 20px;
+animation: fadeIn 1s ease-in-out;
+}
+
+/* Grid Layout for Large Screens */
+.about-grid {
+display: grid;
+grid-template-columns: 1fr 1fr; /* Two equal columns */
+gap: 30px;
+align-items: center;
+}
+
+/* Image Styling */
+.about-image img {
+width: 100%;
+max-width: 500px;
+height: 600px;
+border-radius: 10px;
+transition: transform 0.4s ease-in-out;
+}
+
+/* Image Hover Effect */
+.about-image img:hover {
+transform: scale(1.05);
+}
+
+/* Text Section */
+.about-text {
+font-size: 18px;
+text-align: justify;
+color: #333;
+margin-bottom: 20px;
+animation: slideIn 1s ease-in-out;
+}
+
+/* Stats Section */
+.about-stats {
+display: grid;
+grid-template-columns: repeat(2, 1fr); /* Two columns */
+gap: 20px;
+background-image: url("home_card.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+border-radius: 10px;
+padding: 20px;
+text-align: center;
+}
+
+/* Individual Stat Box */
+.stat-box {
+background: rgba(255, 255, 255, 0.9);
+padding: 15px;
+border-radius: 10px;
+min-height: 150px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect on Stats */
+.stat-box:hover {
+transform: translateY(-5px);
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 992px) { /* Tablets & Mobile */
+.about-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-container h1 {
+    font-size: 2rem;
+}
+
+.about-image img {
+    max-width: 100%; /* Full width on small screens */
+}
+
+.about-text {
+    font-size: 16px; /* Slightly smaller for mobile */
+}
+
+.about-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.stat-box {
+    flex: 1 1 100%; /* Full width for better stacking */
+}
+}
+
+/* Animations */
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+@keyframes slideIn {
+from { transform: translateX(-50px); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}
+
+
+
+
+
+
+
+
