@@ -151,77 +151,85 @@
 .carousel,
 .carousel-inner,
 .carousel-item {
-width: 100%;
-height: 85vh; /* This keeps the carousel height consistent */
+    width: 100%;         /* Ensure it takes full width of the container */
+    height: 100vh;       /* Ensure height is relative to viewport height */
 }
 
 .carousel-item img {
-object-fit: cover;
-width: 100%;   /* Make sure image takes up the full width */
-height: 100%;  /* Ensure image takes up the full height */
+    object-fit: cover;   /* Maintain aspect ratio and cover the area */
+    width: 100%;          /* Make the image responsive to the container */
+    height: 100%;         /* Make the image responsive to the container */
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-width: 50px;
-height: 50px;
-border-radius: 50%;
-background-color: rgba(0, 0, 0, 0.5);
-display: flex;
-align-items: center;
-justify-content: center;
-position: absolute;
-top: 50%; 
-transform: translateY(-50%);
-z-index: 10; 
-}
-
-.carousel-control-prev {
-left: 15px; 
-}
-
-.carousel-control-next {
-right: 15px; 
-}
-
-@media (max-width: 768px) {
-/* On mobile, adjust the size of the carousel control icons */
+/* Style for carousel controls */
 .carousel-control-prev,
 .carousel-control-next {
     width: 40px;
     height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+    z-index: 10; 
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    width: 20px; 
-    height: 20px;
+.carousel-control-prev {
+    left: 15px; 
 }
 
-/* For smaller screens, reduce the height of the carousel */
-.carousel-item {
-    height: 60vh;  /* Adjust this to suit the desired look */
+.carousel-control-next {
+    right: 15px; 
 }
 
-/* Ensure the image fits within the carousel on mobile */
-.carousel-item img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+/* Adjust carousel controls for small screens */
+@media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 35px;
+        height: 35px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 20px; 
+        height: 20px;
+    }
+
+    /* Ensure the carousel adjusts on smaller screens */
+    .carousel-item {
+        height: 60vh;   /* Reduce height on smaller screens */
+    }
+
+    /* Prevent images from getting stretched or compressed */
+    .carousel-item img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
 }
+
+/* For larger screens (larger than 1200px) */
+@media (min-width: 1200px) {
+    .carousel-item {
+        height: 85vh;  /* Keep a larger height for larger screens */
+    }
 }
 
 body {
-position: relative;
-z-index: 0;
-background-color: white;
+    position: relative;
+    z-index: 0;
+    background-color: white;
 }
 
 .content {
-position: relative;
-z-index: 2; 
-background-color: white;
-padding: 20px;
+    position: relative;
+    z-index: 2; 
+    background-color: white;
+    padding: 20px;
 }
 
 
